@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+.sass-cache
+npm-debug.log*
+ssl
+app/db/app.db
+media
+media/*
+config.js
+client/public/*
+data
+data/mongo
+data/sqlite
