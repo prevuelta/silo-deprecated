@@ -1,0 +1,49 @@
+header#main {
+    padding: $u2 $u2;
+    display: flex;
+    flex: 0 0 $u4;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 0 0 $u4 0;
+    background: $lightGrey;
+    border-bottom: 2px solid $grey;
+
+    h1 {
+        font-size: $pu * 1.4;
+        padding: 0;
+        background: none;
+    }
+
+    a {
+        @extend %body-font;
+        color: $darkGrey;
+        font-size: $pu;
+        margin: 0;
+        font-weight: bold;
+
+        &.button {
+            background: $grey;
+            color: $darkGrey;
+            &:hover {
+                background: $blue;
+            }
+        }
+    }
+
+    span.divider {
+        margin: 0 $u 0 0;
+    }
+
+    .link-group {
+        a {
+            margin-right: $u;
+            // padding-right: $u;
+            // border-right: 1px solid $darkGrey;
+            &:last-child {
+                margin: 0;
+                border: none;
+            }
+        }
+    }
+}

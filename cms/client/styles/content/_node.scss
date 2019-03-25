@@ -1,0 +1,90 @@
+.node-wrapper {
+    margin: 0 0 $u 0;
+    padding: $u $u2;
+    background: $lightGrey;
+    border-radius: $hu;
+    .node.hidden {
+        display: none;
+    }
+    .node-wrapper {
+        padding: $u;
+        background: white;
+        border-bottom: 1px solid $grey;
+        border-radius: 0;
+        &:last-child {
+            border: none;
+        }
+        margin: 0;
+    }
+    .node {
+        margin-top: $u2;
+    }
+    .node-title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            margin: 0 $u2 0 0;
+        }
+        & > div {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    &.inline {
+        padding: $u;
+        background: white;
+        border-bottom: 1px solid $grey;
+        border-radius: 0;
+        &:last-child {
+            border: none;
+        }
+        margin: 0;
+    }
+}
+
+.inline-nodes {
+    margin-bottom: $u;
+    border: 1px solid $grey;
+}
+
+.add-node {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#create-modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    & > div {
+        background: white;
+        position: relative;
+        max-height: 100%;
+        overflow-y: auto;
+        width: 80%;
+        max-width: 1200px;
+        padding: $u2;
+    }
+
+    #close-modal {
+        position: absolute;
+        right: $u;
+        top: $u;
+        background: white;
+        padding: $hu;
+        cursor: pointer;
+    }
+}

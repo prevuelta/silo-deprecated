@@ -1,13 +1,9 @@
 node_modules
 .DS_Store
 .sass-cache
-npm-debug.log*
-ssl
+*.log
 app/db/app.db
-media
-media/*
-config.js
-client/public/*
+assets
+config
 data
-data/mongo
-data/sqlite
+client/public/*

@@ -1,0 +1,206 @@
+.asset {
+    background: $grey;
+    width: 100%;
+    height: $u10;
+    padding: $u;
+}
+
+.asset-preview {
+    width: $u8;
+    height: $u8;
+    padding: $u;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .hover-preview {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 160px;
+        margin: (-$u) 0 0 (-$u);
+        height: auto;
+        flex-flow: column;
+        align-items: center;
+        background: white;
+        padding: $u;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        img {
+            margin: 0 0 $hu 0;
+            max-height: 200px;
+        }
+
+        p {
+            word-wrap: break-word;
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        .hover-preview {
+            display: flex;
+        }
+    }
+}
+
+.asset-icon {
+    width: 100;
+    height: 100;
+    font-size: $puh;
+}
+
+.asset-table {
+    max-height: $u * 32;
+    overflow-y: scroll;
+    border: 1px solid $lightGrey;
+    padding: $u $u4 $u4 $u;
+    display: flex;
+    margin: 0 0 $u3 0;
+    flex-flow: row wrap;
+
+    .asset-item {
+        display: flex;
+        flex-flow: column;
+        cursor: pointer;
+        align-items: center;
+        background: $lightGrey;
+        padding: $hu;
+        flex: 0 0 120px;
+        margin: 0 $hu $hu 0;
+        position: relative;
+        height: $u * 14;
+        border: $qu solid transparent;
+
+        p {
+            font-weight: bold;
+            font-size: 12px;
+            margin: 0 0 $hu 0;
+            text-align: center;
+        }
+
+        &:hover {
+            background: $lightGrey;
+        }
+
+        &.selected {
+            border-color: $lightBlue;
+            cursor: default;
+        }
+    }
+
+    .delete-file {
+        position: absolute;
+        // top: -$hu;
+        // right: -$hu;
+        top: 2px;
+        right: 2px;
+        background: $orange;
+        padding: $hu;
+        // border-radius: 50%;
+
+        svg {
+            fill: white;
+            width: $u;
+            height: $u;
+            display: block;
+        }
+
+        &:hover {
+            background: $darkGrey;
+        }
+    }
+
+    .asset {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        // width: 20%;
+        height: $u6;
+        width: $u6;
+        background: white;
+        padding: $hu;
+        margin-bottom: $u;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.drop-zone {
+    margin: $u3 0;
+    border: 2px dashed $blue;
+    border-radius: $u;
+    padding: $u;
+    max-width: 400px;
+    text-align: center;
+    p {
+        margin: 0;
+        color: $blue;
+        font-size: $pu;
+        font-weight: bold;
+    }
+}
+
+.file-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+}
+
+.asset-actions {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    padding: $hu;
+    margin: 0 0 $u2 0;
+    background: $lightGrey;
+    border-radius: $qu;
+
+    label {
+        margin: 0 $u 0 0;
+    }
+
+    button {
+        margin: 0 0 0 $u;
+    }
+
+    #modal & label {
+        // margin: 0;
+    }
+}
+
+p.loading-files {
+    font-weight: bold;
+    margin: $u4 $u2;
+    width: 100%;
+    text-align: center;
+    font-size: $pu;
+}
+
+.mini-loader {
+    width: 100%;
+    text-align: center;
+    transform: scale(0.5);
+
+    .loader {
+        position: static;
+    }
+
+    > * {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,19 @@
+.react-datepicker-popper .react-datepicker__time-box {
+    width: 108px !important;
+}
+
+.react-datepicker-wrapper {
+    width: 100% !important;
+}
+
+.react-datepicker__time-list {
+    padding: 0 !important;
+}
+
+.react-datepicker__input-container {
+    display: flex !important;
+    flex-flow: column;
+}
+.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+    right: 116px !important;
+}

@@ -1,0 +1,67 @@
+section {
+    .node-title .button-group {
+        margin-bottom: 0;
+    }
+
+    header {
+        h2 {
+            border: 0;
+            padding: $u2 0 0 0;
+        }
+    }
+
+    &.nodes header h2 {
+        margin: 0;
+    }
+}
+
+.silo > .button {
+    margin-bottom: 0;
+}
+
+.page-silo {
+    #sidebar {
+        min-width: $u * 15;
+        background: $lightGrey;
+        padding: 0 0 $u2 0;
+        margin: 0 $u 0 0;
+        border-right: $qu solid $grey;
+
+        header {
+            padding: $u $u2;
+            border-bottom: 2px solid $grey;
+
+            h3 {
+                margin: 0;
+                color: $medGrey;
+            }
+        }
+
+        nav {
+            display: flex;
+            flex-flow: column;
+            margin: $u 0;
+
+            a {
+                padding: $hu $u2 $hu $u2;
+                text-transform: capitalize;
+                display: block;
+                font-weight: bold;
+                color: $darkGrey;
+                font-size: $pu;
+
+                &.active {
+                    border-right: $hu solid $darkGrey;
+                    // background: $transparent;
+                    text-decoration: underline;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}

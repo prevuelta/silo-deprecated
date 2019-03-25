@@ -1,0 +1,80 @@
+.field-image {
+    display: flex;
+    flex-flow: row nowrap;
+    .preview {
+        flex: 1 0 30%;
+        border: 2px solid $grey;
+        padding: $u;
+        margin-right: $u2;
+        background: $grey;
+        display: flex;
+        flex-flow: column;
+        .image {
+            margin: 0 0 0 0;
+            display: flex;
+            padding: $hu;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            img {
+            }
+            p {
+                margin: 0;
+            }
+        }
+        input {
+            margin: 0 0 $u 0;
+        }
+        button {
+            padding: $hu;
+            margin: 0 auto $u auto;
+        }
+    }
+    textarea {
+        min-height: 100px;
+    }
+    .info {
+        flex: 1 1 70%;
+        padding: 0 0 0 $u2;
+        > * {
+        }
+    }
+}
+
+.field-markup {
+    .medium-editor-element {
+        margin: 0 0 $u 0;
+    }
+    textarea {
+        width: 100%;
+        padding: $u;
+        // border-color: $lightGrey;
+        // color: $medGrey;
+        &:after {
+            content: 'Markup';
+            font-size: $qqqpu;
+        }
+    }
+}
+
+.field-group {
+    input {
+        margin-right: $u2;
+    }
+}
+
+.dropzone {
+    border: 2px dashed $blue;
+    background: $lightGrey;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    &.dz-drag-hover {
+        border-color: black;
+        color: black;
+    }
+}

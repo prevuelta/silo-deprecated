@@ -1,0 +1,131 @@
+%font-smooth {
+    -webkit-font-smoothing: antialiased;
+}
+
+%display-font {
+    font-family: 'PT Serif', serif;
+    font-style: normal;
+    font-weight: 700; // 400
+    @extend %font-smooth;
+}
+
+%body-font {
+    font-family: 'Karla', monospace;
+    font-style: normal;
+    font-weight: 400; // 700
+}
+
+body {
+    @extend %body-font;
+    color: $darkGrey;
+}
+
+.title {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %display-font;
+    color: $darkGrey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p {
+    margin: 0 0 1em 0;
+}
+
+p,
+li,
+a,
+input,
+textarea,
+select,
+button {
+    font-size: $pu * 0.875;
+    line-height: 1.5em;
+}
+
+h1 {
+    font-size: $pu3;
+    line-height: 1.2em;
+    padding: $u2;
+    background: $grey;
+    margin: 0;
+}
+
+h1 + h2 {
+    margin-top: -1em;
+}
+
+h2 {
+    font-size: $pu2;
+    line-height: 1.2em;
+    &.object-title {
+        font-size: $qqqpu;
+        background: $grey;
+        padding: $qu;
+        border: none;
+    }
+}
+
+h3 {
+    font-size: $pu * 1.1;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+
+button {
+    @extend %body-font;
+    line-height: 1em;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        color: $orange;
+    }
+    &.invert {
+        color: $lightGrey;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+.header-with-icon {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.header-button {
+    cursor: pointer;
+    padding: 0 $hu;
+    margin: 0 0 $u 0;
+    .array-item-header & {
+        margin: 0;
+    }
+    font-weight: bold;
+    font-size: $u + $hu;
+    &:hover {
+        opacity: 0.5;
+    }
+    span {
+        // font-size: small;
+        @extend %body-font;
+        margin: 0 0 0 $u;
+        color: $medGrey;
+    }
+}

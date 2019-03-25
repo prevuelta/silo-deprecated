@@ -1,0 +1,16 @@
+CREATE TABLE user(
+    id      INTEGER     PRIMARY KEY                 NOT NULL,
+    username    TEXT                                    NOT NULL,
+    created TEXT                                    NOT NULL,
+    email   TEXT                                    NOT NULL,
+    hash    TEXT                                    NOT NULL,
+    admin BOOLEAN DEFAULT FALSE                  NOT NULL,
+    role INTEGER                                NOT NULL
+
+);
+
+CREATE TABLE consumer(
+    id      INTEGER     PRIMARY KEY             NOT NULL,
+    name    TEXT                                NOT NULL,
+    created TEXT                                NOT NULL
+); 

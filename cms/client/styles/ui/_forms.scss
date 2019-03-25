@@ -1,0 +1,267 @@
+form {
+    > p {
+        position: fixed;
+        background: $lightGrey;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: $u;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 2px solid $grey;
+        button {
+            margin: 0;
+        }
+    }
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    legend {
+        font-weight: 700;
+        background: white;
+        padding: $qu $u;
+        border: 2px solid $orange;
+        display: none;
+    }
+}
+
+.field-array-of-string {
+    > .array > .btn-delete {
+        right: 0;
+        left: auto;
+        //top: $u3;
+    }
+    > .array > .custom {
+        padding-right: $u4;
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.root > .field-wrapper {
+    > .btn-down,
+    > .btn-up {
+        display: none;
+    }
+}
+
+.field-object {
+}
+
+.field-wrapper {
+    position: relative;
+    // padding: $u;
+    position: relative;
+    border: 1px solid $grey;
+    &.collapsed {
+        // border: none;
+    }
+    // padding-left: $hu;
+    margin: 0 0 $u 0;
+    &.array > .custom > h2 {
+        cursor: pointer;
+        padding-left: $u3;
+        padding-bottom: 0;
+        border: none;
+        margin: 0;
+    }
+}
+
+.array-item-header {
+    padding: $hu;
+    // height: $u4;
+    // margin: $u 0;
+    background: $lightGrey;
+    // border-radius: $hu $hu 0 0;
+    position: relative;
+}
+
+.btn-down,
+.btn-up {
+    border-radius: 0;
+    padding: $hu;
+    svg {
+        width: $u;
+        height: $u;
+        fill: white;
+    }
+}
+.btn-down {
+    margin-right: $u;
+    svg {
+        transform: rotate(180deg);
+    }
+}
+.btn-delete,
+.btn-collapse {
+    // position: absolute;
+    //top: $qu;
+}
+
+.btn-delete {
+    left: $u;
+}
+
+.btn-collapse {
+    right: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: column;
+    margin: $u 0;
+    padding: 0 $hu;
+    label {
+        font-weight: bold;
+        margin: 0 $u $hu 0;
+        @extend %body-font;
+    }
+}
+form > .form-group {
+    padding: 0;
+    border: none;
+}
+
+.custom {
+    position: relative;
+    .form-group {
+        margin-top: $u;
+    }
+}
+
+.field-array {
+    position: relative;
+}
+
+#login .field-group {
+    margin: 0 0 $u2 0;
+}
+
+.array-item {
+    border-left: $qu solid $darkGrey;
+    margin: 0 0 $u2 0;
+    background: $lightGrey;
+    padding: $u2;
+}
+
+input,
+textarea,
+select,
+.medium-editor-element {
+    border: 2px solid $grey;
+    border-radius: $hu;
+    padding: $qqqu;
+    @extend %body-font;
+    color: $darkGrey;
+
+    &:focus {
+        outline: none;
+        background: lighten($blue, 40);
+        border-color: $blue;
+    }
+
+    &[readonly] {
+        border: none;
+        background: #f0f0f0;
+        color: #444444;
+    }
+
+    &.alert {
+        border-color: $orange;
+    }
+}
+
+textarea {
+    border: none;
+    background: $lightGrey;
+    border: 1px dashed $grey;
+    border-radius: 0;
+    padding: $qqqu;
+    resize: none;
+    height: $u * 10;
+    transition: height 0.4s;
+    &:focus {
+        height: $u * 14;
+    }
+}
+
+.medium-editor-element {
+    padding: $u;
+}
+
+label {
+    margin: 0 0 $qu 0;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.error {
+    color: $orange;
+    padding: $hu;
+    margin: 0 0 $u 0;
+}
+
+.tools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $hu;
+    > button {
+        margin-right: $qu;
+    }
+}
+
+input[type='checkbox'] {
+    margin: 0 $u 0 0;
+    border: 2px solid $blue;
+    padding: $qu;
+}
+
+select {
+    max-width: $u10;
+    padding: $u;
+}
+
+.field-array > .array > .field > label {
+    display: none;
+}
+
+.nodes label[for='root'] {
+    display: none;
+    // font-size: $puh;
+    // font-weight: bold;
+    // @extend %display-font;
+    // border-bottom: 2px solid $grey;
+    // padding: $u 0;
+    // margin: 0 $u $u 0;
+}
+
+label.object-title {
+    font-size: 18px;
+    // margin: $u 0;
+    padding-left: $hu;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        color: $medGrey;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        border-right: $hu solid transparent;
+        border-left: $hu solid transparent;
+        border-top: $hu solid $blue;
+        top: $qqqu;
+        right: 100%;
+        left: -9px;
+        transition: transform 0.4s ease;
+    }
+    .collapsed &:before {
+        transform: rotate(-90deg);
+    }
+}

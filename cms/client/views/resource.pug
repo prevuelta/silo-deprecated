@@ -1,0 +1,5 @@
+mixin resource(resource)
+    div.silo
+        .info
+            h3.title=resource.title
+        a(class="button",href=`/admin/resource/${resource.name}`) Manage

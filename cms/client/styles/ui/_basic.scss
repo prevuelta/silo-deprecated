@@ -1,0 +1,179 @@
+button,
+.button {
+    background: $blue;
+    color: white;
+    border: none;
+    padding: $qqqu $u2;
+    border-radius: $hu;
+    cursor: pointer;
+    margin: 0 0 $u 0;
+    // text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+
+    &:hover {
+        background: $lightBlue;
+    }
+
+    &.no-style {
+        background: none;
+        border-bottom: 2px dotted $blue;
+        padding: 0 $hu $hu $hu;
+        color: $blue;
+        border-radius: 0;
+        margin: $u;
+        &:hover {
+            border-color: $orange;
+            color: $orange;
+        }
+    }
+
+    &.icon {
+        width: $u2;
+        height: $u2;
+        margin: 0;
+        background: black;
+        border-radius: 3px;
+        &:hover {
+            background: $blue;
+        }
+        padding: 6px;
+        svg {
+            fill: white;
+            width: $u;
+            height: $u;
+        }
+        &.text {
+            width: auto;
+        }
+    }
+    &.btn-delete,
+    &.btn-collapse {
+        width: $u2;
+        height: $u2;
+        padding: $hu;
+        border-radius: 0;
+        svg {
+            width: $u;
+            fill: white;
+            fill: $orange;
+            height: $u;
+        }
+    }
+    &.btn-delete {
+        // z-index: 1000;
+    }
+    &.btn-collapse {
+        //        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: $u 0;
+        border-radius: 0;
+        background: none;
+        outline: none;
+        top: 0;
+        margin: 0;
+        svg {
+            margin-top: -3px;
+            fill: $medGrey;
+            width: $uh;
+            //height: $uh;
+            transition: transform 0.3s ease;
+        }
+        &.expanded {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &[disabled] {
+        background: $grey;
+        pointer-events: 'none';
+    }
+    &.small {
+        padding: $hu;
+    }
+}
+
+.icon-button svg {
+    width: $u;
+    height: $u;
+}
+
+button.orange,
+a.button.orange {
+    background: $orange;
+    background: none;
+    color: white;
+    border-color: $orange;
+    &:hover {
+        background: $grey;
+    }
+}
+
+button.invert,
+a.button.invert {
+    background: none;
+    border: 2px solid $blue;
+    color: white;
+    &:hover {
+        background: $blue;
+    }
+}
+
+a.button {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1em;
+}
+
+.icon {
+    cursor: pointer;
+    width: $u2;
+    height: $u2;
+    svg {
+        width: $u2;
+        height: $u2;
+    }
+}
+
+.button-group {
+    // margin-bottom: $u;
+    border: 1px solid $grey;
+    border-radius: $hu;
+    display: inline-block;
+    button,
+    a.button {
+        margin-bottom: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        border-right: 2px solid $lightGrey;
+        &:last-child {
+            border-radius: 0 $hu $hu 0;
+            border-right: none;
+        }
+        &:first-child {
+            border-radius: $hu 0 0 $hu;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+}
+
+.tag {
+    background: $grey;
+    display: block;
+    padding: $hu;
+    border-radius: 2px;
+    margin: $qu;
+    font-size: $qqqpu;
+    font-weight: bold;
+    border: 1px solid #777;
+}

@@ -1,0 +1,13 @@
+block vars
+doctype html
+html
+    include ./head
+    body(class=page)
+        include ./header
+        div#wrapper
+            h1=title
+            #message
+            main
+                block content
+        include ./footer
+    block scripts

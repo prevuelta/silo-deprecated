@@ -1,0 +1,44 @@
+#silo-nav nav {
+    margin: 0 0 $u2 0;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    width: 100%;
+    a {
+        padding: 0 $u2;
+        // margin: 0 $u;
+        font-weight: bold;
+        text-transform: capitalize;
+        border-radius: $qu $qu 0 0;
+        color: $medGrey;
+        border-right: 2px solid $grey;
+        &:last-child {
+            border: none;
+        }
+        &.active {
+            background: white;
+            color: $darkGrey;
+            // border-bottom: 2px solid $darkGrey;
+        }
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+.tabs {
+    display: flex;
+    a {
+        cursor: pointer;
+        padding: $hu $u;
+        background: $grey;
+        display: block;
+        margin: 0 $u 0 0;
+        &.active {
+            background: $blue;
+        }
+    }
+}
+
+.tab-container {
+}

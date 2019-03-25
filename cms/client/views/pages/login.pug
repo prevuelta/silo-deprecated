@@ -1,0 +1,78 @@
+extends ../layout-login
+
+block content
+    form(id="login",action="/",method="POST")
+        fieldset
+            h1 #{siteName} Login
+            .form-group
+                label Email
+                input(id="email",type="text",placeholder="person@domain.com", name="email")
+            .form-group
+                label Password
+                input(id="password",type="password",placeholder="Password",name="password")
+            each message in flash
+                .error=message.message
+            button#submit-button(disabled) Submit
+    script.
+
+        const test = 'test';
+        let localStorageAvail;
+
+        try {
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            localStorageAvail = true;
+        } catch(e) {
+            localStorageAvail =  false;
+        }
+
+
+        const form = document.getElementById('login');
+        const emailInput = document.getElementById('email');
+        const passInput = document.getElementById('password');
+
+        if (localStorageAvail) {
+            const user = localStorage.getItem('email');
+            if (user) {
+                emailInput.value = user;
+            }
+        }
+
+        let isValid = false;
+
+        emailInput.oninput = validate.bind(this, 'email');
+        passInput.oninput =  validate.bind(this, 'password');
+
+        const submit = document.getElementById('submit-button');
+
+        const dirty = {
+            email: false,
+            password: false
+        }
+
+        function validate(type) {
+            const email = emailInput.value;
+            const password = passInput.value;
+
+            if (!dirty[type]) dirty[type] = true;
+
+            emailInput.classList.toggle('alert', dirty.email && !email);
+            passInput.classList.toggle('alert', dirty.password && !password);
+
+            if (!email || !password) {
+                submit.setAttribute('disabled', 'disabled');
+                return;
+            }
+
+            isValid = true;
+            submit.removeAttribute('disabled');
+        }
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (!isValid) return;
+            if (localStorageAvail && emailInput.value) {
+                localStorage.setItem('email', emailInput.value);
+            }
+            form.submit();
+        });

@@ -1,0 +1,70 @@
+{
+    "image": {
+        "type": "object",
+        "useAsTitle": "title",
+        "properties": {
+            "src": {
+                "type": "string",
+                "format": "asset"
+            },
+            "title": {
+                "type": "string"
+            },
+            "alt": {
+                "type": "string"
+            },
+            "credit": { "type": "string" },
+            "caption": {
+                "type": "string"
+            }
+        }
+    },
+    "geo": {
+        "title": "Geo coordinates",
+        "type": "object",
+        "properties": {
+            "latitude": { "type": "number" },
+            "longitude": { "type": "number" }
+        }
+    },
+    "xy": {
+        "title": "XY",
+        "type": "object",
+        "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" }
+        }
+    },
+    "link": {
+        "title": "Link",
+        "type": "object",
+        "properties": {
+            "url": { "type": "string" },
+            "linkText": { "type": "string", "title": "Link text" }
+        }
+    },
+
+    "linkArray": {
+        "type": "array",
+        "title": "Links",
+        "items": {
+            "$ref": "silo-definitions.json#/link"
+        }
+    },
+    "metaData": {
+        "title": "Meta data",
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string"
+            },
+            "keywords": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string",
+                "format": "textarea"
+            }
+        }
+    }
+}
