@@ -61,4 +61,3 @@ Note: `silo dev` will run a local version on the port you specified or default `
 ### Notes
 
 - All settings are stored in a .env file in the root dir
-
